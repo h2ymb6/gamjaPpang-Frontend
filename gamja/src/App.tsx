@@ -5,10 +5,13 @@ import Mypage from "./pages/mypage";
 import Main from "./pages/main";
 import Signup from "./pages/signup";
 import Write from "./pages/write";
+import { Reset } from "styled-reset";
 
 function App() {
   return (
     <>
+      <Reset />
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />}></Route>
