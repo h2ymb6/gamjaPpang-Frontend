@@ -34,8 +34,8 @@ export default Post;
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  margin-top: 15px;
+  font-size: 12px;
+  margin-top: 43px;
 `;
 
 const Heart = styled.div`
@@ -59,13 +59,13 @@ const DetailWrap = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 600;
   margin: 10px 0px;
 `;
 
 const Detail = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 `;
 

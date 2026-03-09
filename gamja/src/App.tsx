@@ -6,13 +6,11 @@ import Main from "./pages/main";
 import Signup from "./pages/signup";
 import Write from "./pages/write";
 import { Reset } from "styled-reset";
-import Post from './components/main/post'
 
 function App() {
   return (
     <>
       <Reset />
-      
 
       <BrowserRouter>
         <Routes>
@@ -22,7 +20,6 @@ function App() {
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>
-          <Route path="/post" element={<Post />}></Route>
         </Routes>
       </BrowserRouter>
     </>

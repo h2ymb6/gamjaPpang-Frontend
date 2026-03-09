@@ -21,6 +21,7 @@ const Wrap = styled.div`
   width: 100wv;
   background-color: rgba(217, 217, 217);
   height: 260px;
+  margin-top: 30px;
 `;
 
 const Img = styled.div``;
