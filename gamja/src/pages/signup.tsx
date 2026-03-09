@@ -16,7 +16,7 @@ function Signup() {
         </ImgWrap>
         <RightWrap>
           <TitleCon>
-            <Title>Welcome!!</Title>
+            <Title>Welcome!</Title>
             <Subtitle>토이프젝</Subtitle>
           </TitleCon>
           <InputCon>
@@ -82,7 +82,16 @@ export default Signup;
 const Check = styled.div`
   font-size: 14px;
   color: white;
-  background-color: 141, 119, 119;
+  background-color: rgba(141, 119, 119);
+  width: 63px;
+  border-radius: 5px;
+  display: flex;
+  margin-left: 18px;
+  font-weight: 300;
+  justify-content: center;
+  margin-top: -5px;
+  height: 25px;
+  align-items: center;
 `;
 const OtherLoginCon = styled.div`
   display: flex;
@@ -149,7 +158,7 @@ const Input = styled.input`
 const InputCon = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  margin: 10px;
 `;
 
 const LoginBtn = styled.button`
@@ -167,4 +176,5 @@ const Signu = styled.p``;
 const SignupCon = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 20px;
 `;
