@@ -16,7 +16,7 @@ function Signup() {
         </ImgWrap>
         <RightWrap>
           <TitleCon>
-            <Title>Welcome!</Title>
+            <Title>Welcome!!</Title>
             <Subtitle>토이프젝</Subtitle>
           </TitleCon>
           <InputCon>
