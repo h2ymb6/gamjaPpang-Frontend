@@ -5,7 +5,7 @@ function ChatHistory() {
     <>
       <Chat>좋은 글 감사합니다람쥐</Chat>
       <Bottom>
-        <Date>2025.04.16</Date>
+        <ChatDate>2025.04.16</ChatDate>
         <Title>'대충 개쩌는 글'에 쓴 댓글</Title>
       </Bottom>
     </>
@@ -18,7 +18,7 @@ const Chat = styled.div`
   width: 542px;
   padding-top: 6px;
 `;
-const Date = styled.div``;
+const ChatDate = styled.div``;
 const Title = styled.div``;
 const Bottom = styled.div`
   display: flex;

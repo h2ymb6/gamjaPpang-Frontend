@@ -20,6 +20,6 @@ const Button = styled.button<{ text: string }>`
   cursor: pointer;
   font-size: 16px;
   background-color: ${(props) =>
-    props.text == "확인" ? "rgba(0,196,113)" : "white"};
-  color: ${(props) => (props.text == "확인" ? "white" : "black")};
+    props.text === "확인" ? "rgba(0,196,113)" : "white"};
+  color: ${(props) => (props.text === "확인" ? "white" : "black")};
 `;

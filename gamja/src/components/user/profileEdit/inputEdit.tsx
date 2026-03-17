@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface TitleProps {
   title: string;
   holder: string;
+  type?: string;
 }
 
 export const InputEdit = (props: TitleProps) => {
@@ -10,7 +11,7 @@ export const InputEdit = (props: TitleProps) => {
     <>
       <Wrapper>
         <Title>{props.title}</Title>
-        <Input placeholder={props.holder}></Input>
+        <Input placeholder={props.holder} type={props.type}></Input>
       </Wrapper>
     </>
   );
