@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 interface BtnProps {
   text: string;
+  edit?: () => void;
 }
 
-export const Button = ({ text }: BtnProps) => {
+export const Button = ({ text, edit }: BtnProps) => {
   return (
     <>
-      <Btn text={text}>{text}</Btn>
+      <Btn text={text} onClick={edit}>
+        {text}
+      </Btn>
     </>
   );
 };

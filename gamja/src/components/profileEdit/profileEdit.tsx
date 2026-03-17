@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { InputEdit } from "./inputEdit";
-import { Button } from "./Btn";
+import { Button } from "./Button";
 
-export const ProfileEdit = () => {
+interface EditProps {
+  close: () => void;
+}
+
+export const ProfileEdit = ({ close }: EditProps) => {
   return (
     <Wrapper>
       <InputWrapper>
@@ -20,14 +24,12 @@ export const ProfileEdit = () => {
       </InputWrapper>
 
       <ButtonWrapper>
-        <Button text="취소" />
+        <Button text="취소" edit={close} />
         <Button text="확인" />
       </ButtonWrapper>
-
     </Wrapper>
   );
 };
-
 
 const ButtonWrapper = styled.div`
   display: flex;
