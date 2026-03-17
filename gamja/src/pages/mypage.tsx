@@ -16,7 +16,7 @@ function Mypage() {
           <MyProfileTitle>내 프로필</MyProfileTitle>
           <UserProfile></UserProfile>
           <NickName>감자빵</NickName>
-          <ModifyBtn onClick={() => setEdit(!edit)}>프로필 수정</ModifyBtn>
+          <ModifyBtn onClick={() => setEdit(true)}>프로필 수정</ModifyBtn>
         </Myprofile>
 
         <ChatWrap>
