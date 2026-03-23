@@ -4,9 +4,23 @@ import cat from "../assets/Login/cat.svg";
 import kakao from "../assets/Login/kakao.svg";
 import naver from "../assets/Login/naver.svg";
 import google from "../assets/Login/google.svg";
+import { useState } from "react";
+import CreateUser from "../apis/user/createUser";
 
 function Signup() {
+  const [id, setId] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+
+  const loginHandle = async () => {
+    try {
+      const result = await CreateUser({ id, name, password });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -20,10 +34,20 @@ function Signup() {
             <Subtitle>토이프젝</Subtitle>
           </TitleCon>
           <InputCon>
-            <Input placeholder="닉네임 입력"></Input>
-            <Input placeholder="아이디 입력"></Input>
+            <Input
+              placeholder="닉네임 입력"
+              onChange={(e) => setName(e.target.value)}
+            ></Input>
+            <Input
+              placeholder="아이디 입력"
+              onChange={(e) => setId(e.target.value)}
+            ></Input>
             <Check>중복확인</Check>
-            <Input placeholder="비밀번호 입력" type="password"></Input>
+            <Input
+              placeholder="비밀번호 입력"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            ></Input>
           </InputCon>
           <LoginBtn
             onClick={() => {
@@ -47,7 +71,7 @@ function Signup() {
                 cursor: "pointer",
               }}
               onClick={() => {
-                navigate("/signup");
+                loginHandle;
               }}
             >
               로그인
