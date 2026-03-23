@@ -8,19 +8,10 @@ import { useState } from "react";
 import CreateUser from "../apis/user/createUser";
 
 function Signup() {
-  const [id, setId] = useState<string>("");
   const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
-
-  const loginHandle = async () => {
-    try {
-      const result = await CreateUser({ id, name, password });
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <>
@@ -39,8 +30,8 @@ function Signup() {
               onChange={(e) => setName(e.target.value)}
             ></Input>
             <Input
-              placeholder="아이디 입력"
-              onChange={(e) => setId(e.target.value)}
+              placeholder="이메일 입력"
+              onChange={(e) => setEmail(e.target.value)}
             ></Input>
             <Check>중복확인</Check>
             <Input
@@ -50,8 +41,8 @@ function Signup() {
             ></Input>
           </InputCon>
           <SignupButton
-            onClick={() => {
-              loginHandle();
+            onClick={async() => {
+              await CreateUser({  name, email, password });
             }}
           >
             회원가입
