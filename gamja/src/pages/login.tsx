@@ -4,9 +4,13 @@ import cat from "../assets/Login/cat.svg";
 import kakao from "../assets/Login/kakao.svg";
 import naver from "../assets/Login/naver.svg";
 import google from "../assets/Login/google.svg";
+import { useState } from "react";
+import LoginUser from "../apis/user/loginUser";
 
 function Login() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <>
@@ -20,12 +24,19 @@ function Login() {
             <Subtitle>토이프젝</Subtitle>
           </TitleCon>
           <InputCon>
-            <Input placeholder="아이디 입력"></Input>
-            <Input placeholder="비밀번호 입력" type="password"></Input>
+            <Input
+              placeholder="이메일 입력"
+              onChange={(e) => setEmail(e.target.value)}
+            ></Input>
+            <Input
+              placeholder="비밀번호 입력"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            ></Input>
           </InputCon>
           <LoginBtn
-            onClick={() => {
-              navigate("/main");
+            onClick={async () => {
+              await LoginUser({ email, password });
             }}
           >
             로그인
