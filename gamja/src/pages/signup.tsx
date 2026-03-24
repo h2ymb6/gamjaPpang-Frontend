@@ -6,11 +6,14 @@ import naver from "../assets/Login/naver.svg";
 import google from "../assets/Login/google.svg";
 import { useState } from "react";
 import CreateUser from "../apis/user/createUser";
+import { sendEmail, verifyEmail } from "../apis/user/ certification/auth";
 
 function Signup() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [certification, setCertification] = useState<boolean>(false);
+  const [code, setCode] = useState<string>("");
   const navigate = useNavigate();
 
   return (
@@ -34,8 +37,28 @@ function Signup() {
                 placeholder="이메일 입력"
                 onChange={(e) => setEmail(e.target.value)}
               ></Input>
-              <Check>이메일 인증</Check>
+              <Check
+                onClick={async () => {
+                  await sendEmail({ email });
+                  setCertification(true);
+                }}
+              >
+                이메일 인증
+              </Check>
             </div>
+            {certification && (
+              <>
+                <input
+                  placeholder="인증코드를 입력하세요"
+                  onChange={(e) => setCode(e.target.value)}
+                ></input>
+                <button
+                  onClick={() => verifyEmail({ email, signupCode: code })}
+                >
+                  확인
+                </button>
+              </>
+            )}
 
             <Check>중복확인</Check>
             <Input
