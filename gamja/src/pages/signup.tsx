@@ -41,8 +41,8 @@ function Signup() {
             ></Input>
           </InputCon>
           <SignupButton
-            onClick={async() => {
-              await CreateUser({  name, email, password });
+            onClick={async () => {
+              await CreateUser({ name, email, password });
             }}
           >
             회원가입
