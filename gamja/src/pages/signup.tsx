@@ -33,7 +33,13 @@ function Signup() {
               placeholder="닉네임 입력"
               onChange={(e) => setName(e.target.value)}
             ></Input>
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                border: "1px solid black",
+              }}
+            >
               <Input
                 placeholder="이메일 입력"
                 onChange={(e) => setEmail(e.target.value)}
@@ -169,6 +175,8 @@ const Title = styled.h1`
   border-bottom: 2px solid rgb(181, 149, 130);
   width: 119px;
   font-size: 40px;
+  border: none;
+  font-weight: 800;
   margin-right: 250px;
 `;
 
@@ -176,12 +184,16 @@ const Subtitle = styled.h2`
   color: rgb(181, 149, 130);
   font-size: 20px;
   margin-top: -20px;
+  font-weight: 600;
 `;
 
 const TitleCon = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  border: 1px solid black;
+  height: 60px;
+  justify-content: space-between;
 `;
 
 const Input = styled.input`
