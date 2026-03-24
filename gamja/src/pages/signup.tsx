@@ -29,10 +29,14 @@ function Signup() {
               placeholder="닉네임 입력"
               onChange={(e) => setName(e.target.value)}
             ></Input>
-            <Input
-              placeholder="이메일 입력"
-              onChange={(e) => setEmail(e.target.value)}
-            ></Input>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Input
+                placeholder="이메일 입력"
+                onChange={(e) => setEmail(e.target.value)}
+              ></Input>
+              <Check>이메일 인증</Check>
+            </div>
+
             <Check>중복확인</Check>
             <Input
               placeholder="비밀번호 입력"
@@ -88,14 +92,15 @@ const Check = styled.div`
   font-size: 14px;
   color: white;
   background-color: rgba(141, 119, 119);
-  width: 63px;
+  width: 70px;
   border-radius: 5px;
   display: flex;
-  margin-left: 18px;
+  margin-left: 30px;
   font-weight: 300;
+  cursor: pointer;
   justify-content: center;
-  margin-top: -5px;
   height: 25px;
+  margin: 2px;
   align-items: center;
 `;
 const OtherLoginCon = styled.div`
