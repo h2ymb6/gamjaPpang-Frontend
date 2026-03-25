@@ -1,12 +1,7 @@
-import api from "..";
+import api from "../..";
+import type { UserCreate } from "./type";
 
-interface userCreate {
-  username: string;
-  email: string;
-  password: string;
-}
-
-const CreateUser = async ({ username, email, password }: userCreate) => {
+const CreateUser = async ({ username, email, password }: UserCreate) => {
   try {
     const response = await api.post(`/api/v1/auth/join`, {
       username,

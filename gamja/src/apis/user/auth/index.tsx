@@ -1,11 +1,7 @@
 import api from "../..";
+import type { Auth } from "./type";
 
-interface auth {
-  email: string;
-  signupCode?: string;
-}
-
-export const sendEmail = async ({ email }: auth) => {
+export const sendEmail = async ({ email }: Auth) => {
   try {
     const response = await api.post(`/api/v1/auth/code/send`, {
       email,
@@ -17,7 +13,7 @@ export const sendEmail = async ({ email }: auth) => {
   }
 };
 
-export const verifyEmail = async ({ email, signupCode }: auth) => {
+export const verifyEmail = async ({ email, signupCode }: Auth) => {
   try {
     const response = await api.post(`/api/v1/auth/code/verify`, {
       email,

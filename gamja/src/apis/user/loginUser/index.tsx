@@ -1,9 +1,5 @@
-import api from "..";
-
-interface LoginRequest {
-  email: string;
-  password: string;
-}
+import api from "../..";
+import type { LoginRequest } from "./type";
 
 const LoginUser = async ({ email, password }: LoginRequest) => {
   try {
