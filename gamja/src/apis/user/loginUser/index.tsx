@@ -1,7 +1,7 @@
 import api from "../..";
 import type { LoginRequest } from "./type";
 
-const LoginUser = async ({ email, password }: LoginRequest) => {
+export const LoginUser = async ({ email, password }: LoginRequest) => {
   try {
     const response = await api.post(`/api/v1/auth/login`, {
       email,
@@ -18,5 +18,3 @@ const LoginUser = async ({ email, password }: LoginRequest) => {
     throw error;
   }
 };
-
-export default LoginUser;

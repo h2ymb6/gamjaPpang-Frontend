@@ -1,7 +1,7 @@
 import api from "../..";
 import type { UserCreate } from "./type";
 
-const CreateUser = async ({ username, email, password }: UserCreate) => {
+export const CreateUser = async ({ username, email, password }: UserCreate) => {
   try {
     const response = await api.post(`/api/v1/auth/join`, {
       username,
@@ -18,5 +18,3 @@ const CreateUser = async ({ username, email, password }: UserCreate) => {
     throw error;
   }
 };
-
-export default CreateUser;
