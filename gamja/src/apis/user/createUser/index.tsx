@@ -8,11 +8,11 @@ export const CreateUser = async ({ username, email, password }: UserCreate) => {
       email,
       password,
     });
-    return response.data;
+    return response;
   } catch (error: any) {
     const errorData = error.response?.data?.description;
     alert(errorData);
-    
+
     throw error;
   }
 };
