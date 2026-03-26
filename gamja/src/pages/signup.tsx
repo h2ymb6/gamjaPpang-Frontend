@@ -5,7 +5,7 @@ import kakao from "../assets/Login/kakao.svg";
 import naver from "../assets/Login/naver.svg";
 import google from "../assets/Login/google.svg";
 import { useState } from "react";
-import CreateUser from "../apis/user/createUser/index";
+import { CreateUser } from "../apis/user/createUser";
 import { sendEmail, verifyEmail } from "../apis/user/auth/index";
 
 function Signup() {

@@ -1,4 +1,4 @@
-import api from "../..";
+import { api } from "../..";
 import type { Auth } from "./type";
 
 export const sendEmail = async ({ email }: Auth) => {

@@ -1,4 +1,4 @@
-import api from "../..";
+import { api } from "../..";
 import type { UserCreate } from "./type";
 
 export const CreateUser = async ({ username, email, password }: UserCreate) => {

@@ -5,7 +5,7 @@ import kakao from "../assets/Login/kakao.svg";
 import naver from "../assets/Login/naver.svg";
 import google from "../assets/Login/google.svg";
 import { useState } from "react";
-import LoginUser from "../apis/user/loginUser/index";
+import { LoginUser } from "../apis/user/loginUser";
 
 function Login() {
   const navigate = useNavigate();
