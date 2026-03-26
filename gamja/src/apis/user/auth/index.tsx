@@ -6,7 +6,7 @@ export const sendEmail = async ({ email }: Auth) => {
     const response = await api.post(`/api/v1/auth/code/send`, {
       email,
     });
-    return response.data;
+    return response;
   } catch (error) {
     console.log(error);
     throw error;
@@ -19,9 +19,11 @@ export const verifyEmail = async ({ email, signupCode }: Auth) => {
       email,
       signupCode,
     });
-    return response.data;
-  } catch (error) {
-    console.log(error);
+    return response;
+  } catch (error: any) {
+    const errorData = error.response?.data?.description;
+    alert(errorData);
+
     throw error;
   }
 };

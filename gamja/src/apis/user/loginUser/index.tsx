@@ -13,8 +13,10 @@ export const LoginUser = async ({ email, password }: LoginRequest) => {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
     return response.data;
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
+    const errorData = error.response?.data?.description;
+    alert(errorData);
+
     throw error;
   }
 };
