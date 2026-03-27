@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import cat from "../assets/Login/cat.svg";
-import kakao from "../assets/Login/kakao.svg";
-import naver from "../assets/Login/naver.svg";
-import google from "../assets/Login/google.svg";
 import { useState } from "react";
 import { CreateUser } from "../apis/user/createUser";
 import { sendEmail, verifyEmail } from "../apis/user/auth/index";
@@ -118,17 +115,7 @@ function Signup() {
           >
             또는
           </div>
-          <OtherLoginCon>
-            <Icon>
-              <img src={kakao} alt="" />
-            </Icon>
-            <Icon>
-              <img src={naver} alt="" />
-            </Icon>
-            <Icon>
-              <img src={google} alt="" />
-            </Icon>
-          </OtherLoginCon>
+         
         </RightWrap>
       </Wrapper>
     </>
@@ -151,12 +138,6 @@ const Check = styled.div`
   height: 25px;
   margin: 2px;
   align-items: center;
-`;
-const OtherLoginCon = styled.div`
-  display: flex;
-`;
-const Icon = styled.div`
-  margin: 0px 5px;
 `;
 const RightWrap = styled.div`
   width: 536px;

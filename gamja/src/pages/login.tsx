@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import cat from "../assets/Login/cat.svg";
-import kakao from "../assets/Login/kakao.svg";
-import naver from "../assets/Login/naver.svg";
-import google from "../assets/Login/google.svg";
 import { useState } from "react";
 import { LoginUser } from "../apis/user/loginUser";
+import { IconWrap } from "../components/login/signup/iconWrap";
 
 function Login() {
   const navigate = useNavigate();
@@ -70,17 +68,7 @@ function Login() {
           >
             또는
           </div>
-          <OtherLoginCon>
-            <Icon>
-              <img src={kakao} alt="" />
-            </Icon>
-            <Icon>
-              <img src={naver} alt="" />
-            </Icon>
-            <Icon>
-              <img src={google} alt="" />
-            </Icon>
-          </OtherLoginCon>
+          <IconWrap />
         </RightWrap>
       </Wrapper>
     </>
@@ -89,12 +77,6 @@ function Login() {
 
 export default Login;
 
-const OtherLoginCon = styled.div`
-  display: flex;
-`;
-const Icon = styled.div`
-  margin: 0px 5px;
-`;
 const RightWrap = styled.div`
   width: 536px;
   display: flex;
