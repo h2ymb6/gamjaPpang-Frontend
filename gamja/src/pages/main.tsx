@@ -21,22 +21,10 @@ function Main() {
 
         <div>
           <Order>
-            <div
-              style={{
-                borderRight: "1px solid black",
-                paddingRight: "6px",
-                fontSize: "16px",
-                fontWeight: 600,
-              }}
-            >
-              좋아요순
-            </div>
-            <div
-              style={{ color: "gray", paddingLeft: "6px", fontSize: "16px" }}
-            >
-              최신순
-            </div>
+            <Line>좋아요순</Line>
+            <Off>최신순</Off>
           </Order>
+
           <PostWrap>
             <Post />
             <Post />
@@ -48,6 +36,19 @@ function Main() {
 }
 
 export default Main;
+
+const Off = styled.div`
+  color: gray;
+  padding-left: 6px;
+  font-size: 16px;
+`;
+
+const Line = styled.div`
+  border-right: 1px solid black;
+  padding-right: 6px;
+  font-size: 16px;
+  font-weight: 600;
+`;
 
 const MainWrap = styled.div`
   display: flex;

@@ -16,7 +16,7 @@ function Detail() {
           <Date>2025.12.24. 19:19</Date>
         </TitleBottom>
 
-        <div style={{ borderBottom: "1px solid gray", width: "937px" }}></div>
+        <Line style={{}}></Line>
 
         <Text>대충 내용</Text>
       </Wrap>
@@ -25,6 +25,11 @@ function Detail() {
 }
 
 export default Detail;
+
+const Line = styled.div`
+  border-bottom: 1px solid gray;
+  width: 937px;
+`;
 
 const Date = styled.div``;
 
