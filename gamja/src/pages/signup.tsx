@@ -32,13 +32,8 @@ function Signup() {
               type="password"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                border: "1px solid black",
-              }}
-            >
+
+            <EmailWrapper>
               <Input
                 placeholder="이메일 입력"
                 type="password"
@@ -52,7 +47,8 @@ function Signup() {
               >
                 인증 요청
               </Check>
-            </div>
+            </EmailWrapper>
+
             {certification && (
               <>
                 <input
@@ -76,6 +72,7 @@ function Signup() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </InputCon>
+
           <SignupButton
             onClick={async () => {
               if (!isVerified) {
@@ -93,15 +90,9 @@ function Signup() {
           >
             회원가입
           </SignupButton>
-          <SignupCon>
-            <div
-              style={{
-                color: "gray",
-                fontSize: "17px",
-              }}
-            >
-              만약 계정이 있다면?
-            </div>
+
+          <LoginCon>
+            만약 계정이 있다면?
             <LoginButton
               style={{ cursor: "pointer" }}
               onClick={() => {
@@ -110,14 +101,10 @@ function Signup() {
             >
               로그인
             </LoginButton>
-          </SignupCon>
-          <div
-            style={{
-              marginBottom: "10px",
-            }}
-          >
-            또는
-          </div>
+          </LoginCon>
+
+          <Other>또는</Other>
+
           <IconWrap />
         </RightWrap>
       </Wrapper>
@@ -127,6 +114,26 @@ function Signup() {
 
 export default Signup;
 
+const EmailWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+`;
+
+const Other = styled.div`
+  margin: 20px;
+`;
+
+const LoginCon = styled.div`
+  display: flex;
+  margin-top: 20px;
+  border: 1px solid black;
+  color: gray;
+  width: 190px;
+  justify-content: space-around;
+  font-size: 17px;
+`;
+
 const Check = styled.div`
   font-size: 14px;
   color: white;
@@ -134,7 +141,6 @@ const Check = styled.div`
   width: 67px;
   border-radius: 5px;
   display: flex;
-  margin-left: 30px;
   font-weight: 300;
   cursor: pointer;
   justify-content: center;
@@ -220,13 +226,4 @@ const SignupButton = styled.button`
   cursor: pointer;
 `;
 
-const LoginButton = styled.p`
-  margin-left: "10px";
-  cursor: "pointer";
-`;
-
-const SignupCon = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-`;
+const LoginButton = styled.p``;
