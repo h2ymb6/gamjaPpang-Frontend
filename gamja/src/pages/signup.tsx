@@ -4,6 +4,7 @@ import cat from "../assets/Login/cat.svg";
 import { useState } from "react";
 import { CreateUser } from "../apis/user/createUser";
 import { sendEmail, verifyEmail } from "../apis/user/auth/index";
+import { IconWrap } from "../components/auth/iconWrap";
 
 function Signup() {
   const [username, setUsername] = useState<string>("");
@@ -115,7 +116,7 @@ function Signup() {
           >
             또는
           </div>
-         
+          <IconWrap />
         </RightWrap>
       </Wrapper>
     </>
