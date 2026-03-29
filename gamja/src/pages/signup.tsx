@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { CreateUser } from "../apis/user/createUser";
-import { sendEmail, verifyEmail } from "../apis/user/auth/index";
+import { sendEmail } from "../apis/user/auth/index";
 import { IconWrap } from "../components/auth/iconWrap";
 import { WelcomeTitle } from "../components/auth/welcomeTitle";
 import { Img } from "../components/auth/leftImg";
@@ -13,7 +13,6 @@ function Signup() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [certification, setCertification] = useState<boolean>(false);
-  const [isVerified, setIsVerified] = useState<boolean>(false);
   const navigate = useNavigate();
 
   return (
@@ -25,14 +24,14 @@ function Signup() {
           <InputCon>
             <Input
               placeholder="닉네임 입력"
-              type="password"
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
             />
 
             <EmailWrapper>
               <Input
                 placeholder="이메일 입력"
-                type="password"
+                type="text"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Check
@@ -50,14 +49,14 @@ function Signup() {
             <Input
               placeholder="비밀번호 입력"
               type="password"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </InputCon>
 
           <SignupButton
             onClick={async () => {
-              if (!isVerified) {
-                alert("로그인 인증을 해주세요");
+              if (!certification) {
+                alert("이메일 인증을 해주세요");
                 return;
               }
               try {
@@ -74,14 +73,7 @@ function Signup() {
 
           <LoginCon>
             만약 계정이 있다면?
-            <LoginButton
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              로그인
-            </LoginButton>
+            <LoginButton onClick={() => navigate("/login")}>로그인</LoginButton>
           </LoginCon>
 
           <Other>또는</Other>
@@ -98,7 +90,6 @@ export default Signup;
 const EmailWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
 `;
 
 const Other = styled.div`
@@ -108,7 +99,6 @@ const Other = styled.div`
 const LoginCon = styled.div`
   display: flex;
   margin-top: 20px;
-  border: 1px solid black;
   color: gray;
   width: 190px;
   justify-content: space-around;
@@ -178,4 +168,6 @@ const SignupButton = styled.button`
   cursor: pointer;
 `;
 
-const LoginButton = styled.p``;
+const LoginButton = styled.p`
+  cursor: pointer;
+`;

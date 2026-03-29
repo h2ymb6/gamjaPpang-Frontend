@@ -30,7 +30,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-  border: 1px solid black;
   height: 60px;
   justify-content: space-between;
 `;
