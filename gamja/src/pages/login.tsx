@@ -90,29 +90,6 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
-const ImgWrap = styled.div`
-  width: 537px;
-  height: 653px;
-`;
-const Title = styled.h1`
-  color: rgb(181, 149, 130);
-  border-bottom: 2px solid rgb(181, 149, 130);
-  width: 119px;
-  font-size: 40px;
-  margin-right: 250px;
-`;
-
-const Subtitle = styled.h2`
-  color: rgb(181, 149, 130);
-  font-size: 20px;
-  margin-top: -20px;
-`;
-
-const TitleCon = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-`;
 
 const InputCon = styled.div`
   display: flex;
