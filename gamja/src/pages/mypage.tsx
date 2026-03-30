@@ -1,9 +1,9 @@
 import ChatHistory from "../components/user/chatHistory";
 import HeaderV2 from "../components/common/headerV2";
 import styled from "styled-components";
-import { ProfileEdit } from "../components/profileEdit/profileEdit";
+import { ProfileEdit } from "../components/profile/profileEdit.tsx";
 import { useState } from "react";
-import { Logout } from "../apis/user/logout.tsx";
+import { Logout } from "../components/profile/logout.tsx";
 
 function Mypage() {
   const [edit, setEdit] = useState(false);
