@@ -6,7 +6,7 @@ const WritingSection = () => {
   return (
     <div style={{ margin: "20px", color: "black" }}>
       <EditorWrapper>
-        <CKEditor editor={ClassicEditor} data="" />
+        <CKEditor editor={ClassicEditor as any} data=" " />
       </EditorWrapper>
     </div>
   );
