@@ -1,22 +1,17 @@
 import styled from "styled-components";
 import { Logout } from "../../apis/user/logout.tsx";
+import { useNavigate } from "react-router-dom";
 
-interface props {
-  onClick: () => void;
-}
+export const LogoutButton = () => {
+  const navigate = useNavigate();
 
-export const LogoutButton = ({ onClick }: props) => {
-  const handle = async () => {
+  const handleLogout = async () => {
     const token = localStorage.getItem("refreshToken") || "";
     await Logout({ refreshToken: token });
-    onClick();
+    navigate("/login");
   };
 
-  return (
-    <>
-      <Wrapper onClick={handle}>로그아웃</Wrapper>
-    </>
-  );
+  return <Wrapper onClick={handleLogout}>로그아웃</Wrapper>;
 };
 
 const Wrapper = styled.div`

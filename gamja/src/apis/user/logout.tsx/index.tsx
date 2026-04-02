@@ -15,7 +15,5 @@ export const Logout = async ({ refreshToken }: type) => {
   } finally {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
-
-    window.location.replace("./login");
   }
 };
