@@ -1,4 +1,4 @@
-import { api } from "../..";
+import { api } from "../../..";
 import type { LoginRequest } from "./type";
 
 export const LoginUser = async ({ email, password }: LoginRequest) => {

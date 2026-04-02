@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { LoginUser } from "../apis/user/loginUser";
+import { LoginUser } from "../apis/user/loginUser/local";
 import { IconWrap } from "../components/auth/iconWrap";
 import { Input } from "../components/auth/input";
 import { WelcomeTitle } from "../components/auth/welcomeTitle";
