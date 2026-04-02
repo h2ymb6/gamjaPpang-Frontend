@@ -17,7 +17,7 @@ export const LogoutButton = () => {
 const Wrapper = styled.div`
   width: 80px;
   height: 30px;
-  background-color: red;
+  background-color: #fe3333;
   display: flex;
   justify-content: center;
   align-items: center;
