@@ -10,28 +10,29 @@ export const Loading = () => {
     const query = new URLSearchParams(window.location.search);
     const code = query.get("code");
 
-    const loginTask = async () => {
-      if (!provider || !code) return;
-      try {
-        const response: any = await api.post(`/api/v1/auth/social`, {
-          provider: provider,
-          authorizationCode: code,
-          redirectUri: import.meta.env.VITE_REDIRECT_URI,
-        });
+    if (code && provider) {
+      const loginTask = async () => {
+        if (!provider || !code) return;
+        try {
+          const response: any = await api.post(`/api/v1/auth/social`, {
+            provider: provider,
+            authorizationCode: code,
+            redirectUri: import.meta.env.VITE_REDIRECT_URI,
+          });
 
-        const { accessToken, refreshToken } = response;
+          const { accessToken, refreshToken } = response;
 
-        localStorage.setItem("accessToken", accessToken);
-        localStorage.setItem("refreshToken", refreshToken);
+          localStorage.setItem("accessToken", accessToken);
+          localStorage.setItem("refreshToken", refreshToken);
 
-        navigate("/main");
-      } catch (error) {
-        console.log(error);
-        throw error;
-      }
-    };
-
-    loginTask();
+          navigate("/main");
+        } catch (error) {
+          console.log(error);
+          throw error;
+        }
+      };
+      loginTask();
+    }
   }, [provider, navigate]);
   return <>Loading....</>;
 };

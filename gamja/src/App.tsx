@@ -21,7 +21,7 @@ function App() {
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>
-          <Route path="/login/callback" element={<Loading />}></Route>
+          <Route path="/auth/:provider" element={<Loading />} />
         </Routes>
       </BrowserRouter>
     </>
