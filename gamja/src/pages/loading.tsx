@@ -1,16 +1,20 @@
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from "../apis/index";
 
 export const Loading = () => {
   const navigate = useNavigate();
-  const { provider } = useParams<{ provider: string }>();
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     const code = query.get("code");
+    const provider = query.get("state") || localStorage.getItem("state");
+
+    console.log("추출된 코드:", code);
+    console.log("추출된 소셜(params):", provider);
 
     if (code && provider) {
+      const provider = query.get("state");
       const loginTask = async () => {
         if (!provider || !code) return;
         try {
@@ -33,6 +37,6 @@ export const Loading = () => {
       };
       loginTask();
     }
-  }, [provider, navigate]);
+  }, [navigate]);
   return <>Loading....</>;
 };
