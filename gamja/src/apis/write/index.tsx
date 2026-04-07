@@ -11,6 +11,7 @@ const WriteSubmit = async ({ title, content, tag }: type) => {
 
     if (response.status === 200) {
       alert("제출 성공!");
+      window.location.href = "/main";
     }
 
     return response;
