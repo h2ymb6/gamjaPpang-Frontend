@@ -1,13 +1,16 @@
 import Header from "../components/common/header";
 import WritingSection from "../components/write/writingSection";
 import styled from "styled-components";
+import Title from "../components/write/title";
+import Submit from "../components/write/submit";
+
 
 function Write() {
   return (
     <>
       <Header />
       <TopWrap>
-        <Title placeholder="제목을 작성하세요"></Title>
+        <Title />
         <ProfileWrap>
           <Profile></Profile>
           <Name>작성자</Name>
@@ -15,6 +18,7 @@ function Write() {
       </TopWrap>
 
       <WritingSection />
+      <Submit />
     </>
   );
 }
@@ -26,20 +30,6 @@ const TopWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 60px 0px;
-`;
-
-const Title = styled.input`
-  font-size: 40px;
-  font-weight: 700;
-  width: 937px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  margin-left: 93px;
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 const Profile = styled.div`
