@@ -3,7 +3,7 @@ import Login from "./pages/login";
 import Detail from "./pages/detail";
 import Mypage from "./pages/mypage";
 import MainLikePost from "./pages/mainLikePost";
-import MainMyPost from "./pages/mainMypost";
+import MainMyPost from "./pages/mainMyPost";
 import Signup from "./pages/signup";
 import Write from "./pages/write";
 import { Reset } from "styled-reset";
