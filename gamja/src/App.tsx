@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Detail from "./pages/detail";
 import Mypage from "./pages/mypage";
-import Main from "./pages/main";
+import MainLikePost from "./pages/mainLikePost";
+import MainMyPost from "./pages/mainMypost";
 import Signup from "./pages/signup";
 import Write from "./pages/write";
 import { Reset } from "styled-reset";
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/detail" element={<Detail />}></Route>
-          <Route path="/main" element={<Main />}></Route>
+          <Route path="/mypost" element={<MainMyPost />}></Route>
+          <Route path="/mylike" element={<MainLikePost />}></Route>
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>

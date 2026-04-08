@@ -30,7 +30,6 @@ const MainPageLayouts = ({ children }: MainPageLayoutsProps) => {
           </Order>
 
           <Wrap>{children}</Wrap>
-          
         </div>
       </MainWrap>
     </>

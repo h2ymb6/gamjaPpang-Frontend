@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Post from "../components/main/post";
 import MainPageLayouts from "../layouts/mainPageLoyouts";
 
-function Main() {
+const MainLikePost = () => {
   return (
     <>
       <MainPageLayouts>
@@ -13,9 +13,9 @@ function Main() {
       </MainPageLayouts>
     </>
   );
-}
+};
 
-export default Main;
+export default MainLikePost;
 
 const PostWrap = styled.div`
   display: flex;
