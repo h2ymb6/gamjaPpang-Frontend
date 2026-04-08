@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-const EditButton = () => {
+interface EditButtonProps {
+  onChange: () => void;
+}
+
+const EditButton = ({ onChange }: EditButtonProps) => {
   return (
     <>
       <Wrap>
-        <Button>수정하기</Button>
+        <Button onChange={onChange}>수정하기</Button>
       </Wrap>
     </>
   );
