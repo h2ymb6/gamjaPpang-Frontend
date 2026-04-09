@@ -59,11 +59,6 @@ const Title = styled.div`
   margin: 10px 0px;
 `;
 
-const Detail = styled.div`
-  font-size: 14px;
-  font-weight: 400;
-`;
-
 const ProfileWrap = styled.div`
   display: flex;
   align-items: center;

@@ -1,13 +1,8 @@
 import styled from "styled-components";
 import Header from "../components/common/header";
 import EditButton from "../components/write/editButton";
-import { useState } from "react";
 
 function Detail() {
-  const [isEdit, setIsEdit] = useState(false);
-
-  const onHandle = () => {};
-
   return (
     <>
       <Header />
@@ -27,7 +22,7 @@ function Detail() {
 
         <Text>대충 내용</Text>
       </Wrap>
-      <EditButton onChange={onHandle} />
+      <EditButton/>
     </>
   );
 }
