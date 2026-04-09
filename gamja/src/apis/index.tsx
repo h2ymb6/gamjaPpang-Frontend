@@ -11,6 +11,12 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
+  const skipUrls = ["/Login", "/Signup"];
+
+  if (skipUrls.some((url) => config.url?.includes(url))) {
+    return config;
+  }
+
   const accessToken = localStorage.getItem("accessToken");
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
