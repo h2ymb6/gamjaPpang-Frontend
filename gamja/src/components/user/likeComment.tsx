@@ -2,7 +2,7 @@ import type { Type } from "../../apis/get/main/likePost/type";
 import styled from "styled-components";
 import { CiHeart } from "react-icons/ci";
 
-export const Comment = ({ data }: { data: Type }) => {
+export const LikeComment = ({ data }: { data: Type }) => {
   return (
     <>
       <Wrap>
@@ -13,10 +13,6 @@ export const Comment = ({ data }: { data: Type }) => {
 
         <DetailWrap>
           <Title>{data.title}</Title>
-          <Detail>
-            "한빛미디어 서평단 활동을 위해서 책을 협찬 받아 작성된 서평입니다."
-            스프링 부트의 책이 최근에 출간되었습니다. 이 책은 스프링 부...
-          </Detail>
         </DetailWrap>
 
         <Bottom>
