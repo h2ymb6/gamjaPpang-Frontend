@@ -11,7 +11,7 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const skipUrls = ["/Login", "/Signup"];
+  const skipUrls = ["/login", "/signup"];
 
   if (skipUrls.some((url) => config.url?.includes(url))) {
     return config;
@@ -25,11 +25,12 @@ api.interceptors.request.use((config) => {
 });
 
 api.interceptors.response.use(
-  (response) => response.data,
+  (response) => response,
   async (error) => {
     const config = error.config;
 
-    if (error.response.status === 401 && !config._retry) {
+    if (error.response?.status === 401 && !config._retry) {
+      config._retry = true;
       localStorage.removeItem("accessToken");
       const refreshToken = localStorage.getItem("refreshToken");
 
@@ -38,10 +39,8 @@ api.interceptors.response.use(
           refreshToken,
         });
 
-        config._retry = true;
-
-        const newAccessToken: string = response.accessToken;
-        const newRefreshToken: string = response.refreshToken;
+        const newAccessToken: string = response.data.accessToken;
+        const newRefreshToken: string = response.data.refreshToken;
 
         localStorage.setItem("accessToken", newAccessToken);
         localStorage.setItem("refreshToken", newRefreshToken);
