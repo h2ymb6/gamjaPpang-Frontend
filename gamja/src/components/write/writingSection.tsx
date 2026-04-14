@@ -1,23 +1,22 @@
 import styled from "styled-components";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { useState } from "react";
 
-const WritingSection = () => {
-  const [text, setText] = useState("");
+interface WritingProps {
+  content: string;
+  setContent: (data: string) => void;
+}
 
+const WritingSection = ({ content, setContent }: WritingProps) => {
   return (
     <div style={{ margin: "20px", color: "black" }}>
       <EditorWrapper>
         <CKEditor
           editor={ClassicEditor as any}
-          data=" "
-          onChange={(event, editor) => {
+          data={content}
+          onChange={(_, editor) => {
             const data = editor.getData();
-            console.log({ event, editor, data });
-
-            setText(data);
-            console.log(text);
+            setContent(data);
           }}
         />
       </EditorWrapper>

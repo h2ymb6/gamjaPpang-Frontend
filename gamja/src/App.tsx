@@ -25,7 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/write" element={<Write />}></Route>
           <Route path="/login/callback" element={<Loading />} />
-          <Route path="/edit:postId" element={<Edit />}></Route>
+          <Route path="/edit/:postId" element={<Edit />}></Route>
         </Routes>
       </BrowserRouter>
     </>

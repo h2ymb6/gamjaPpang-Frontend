@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import Header from "../components/common/header";
-import EditButton from "../components/commentPatch/editButton";
+import { GoToEditButton } from "../components/commentPatch/goToEditButton";
 import { useEffect, useState } from "react";
 import Comment from "../components/chat/comment";
 import GetComment from "../apis/get/postComment/index";
 import type { Type } from "../apis/get/postComment/type";
+import { useParams } from "react-router-dom";
 
 function Detail() {
   const [comment, setComment] = useState<Type[]>([]);
+
+  const { postId } = useParams();
+  const currentPostId = Number(postId);
 
   useEffect(() => {
     const getComment = async () => {
@@ -42,7 +46,7 @@ function Detail() {
 
         <Text>대충 내용</Text>
       </Wrap>
-      <EditButton />
+      <GoToEditButton postId={currentPostId} />
       {comment.map((comment, index) => {
         return (
           <Comment

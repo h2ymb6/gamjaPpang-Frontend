@@ -1,18 +1,9 @@
 import type { Type } from "./type";
 import { api } from "../..";
 
-export const patchPost = async ({
-  postId,
-  title,
-  content,
-  tag,
-}: Type) => {
+export const patchPost = async ({ postId, ...rest }: Type) => {
   try {
-    const response = await api.patch(`/api/v1/post/${postId}`, {
-      title,
-      content,
-      tag,
-    });
+    const response = await api.patch(`/api/v1/post/${postId}`, rest);
     return response.data;
   } catch (error) {
     console.log(error);

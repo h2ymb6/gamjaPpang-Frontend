@@ -2,11 +2,13 @@ import Header from "../components/common/header";
 import WritingSection from "../components/write/writingSection";
 import styled from "styled-components";
 import Title from "../components/write/title";
-import Submit from "../components/write/submit";
+import Submit from "../components/write/postSubmit";
 import { useState } from "react";
 
 function Write() {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+
   return (
     <>
       <Header />
@@ -18,7 +20,7 @@ function Write() {
         </ProfileWrap>
       </TopWrap>
 
-      <WritingSection />
+      <WritingSection content={content} setContent={setContent} />
       <Submit title={title} />
     </>
   );

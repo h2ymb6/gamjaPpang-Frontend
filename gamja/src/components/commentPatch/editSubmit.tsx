@@ -1,25 +1,32 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { patchPost } from "../../apis/patch/post";
 
-const EditButton = () => {
-  const [modal, setModal] = useState<boolean>(false);
+interface Type {
+  postId: number;
+  title: string;
+  content: string;
+  tag: string[];
+}
+
+const EditSubmit = ({ postId, title, content, tag }: Type) => {
+  const handleSubmit = async () => {
+    try {
+      await patchPost({ postId, title, content, tag });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
       <Wrap>
-        <Button
-          onClick={() => {
-            setModal(!modal);
-          }}
-        >
-          수정하기
-        </Button>
+        <Button onClick={handleSubmit}>제출하기</Button>
       </Wrap>
     </>
   );
 };
 
-export default EditButton;
+export default EditSubmit;
 
 const Button = styled.div`
   background-color: rgba(270, 216, 206);

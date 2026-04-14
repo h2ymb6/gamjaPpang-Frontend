@@ -1,6 +1,6 @@
 export interface Type {
   postId: number;
-  title: string;
-  content: string;
-  tag: string[];
+  title?: string;
+  content?: string;
+  tag?: string[];
 }

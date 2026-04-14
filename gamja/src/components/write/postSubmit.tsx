@@ -5,7 +5,7 @@ interface Type {
   title: string;
 }
 
-const Submit = ({ title }: Type) => {
+const postSubmit = ({ title }: Type) => {
   const handleSubmit = async () => {
     WriteSubmit({ title, content: "", tag: [] });
   };
@@ -19,7 +19,7 @@ const Submit = ({ title }: Type) => {
   );
 };
 
-export default Submit;
+export default postSubmit;
 
 const Button = styled.div`
   background-color: rgba(270, 216, 206);
