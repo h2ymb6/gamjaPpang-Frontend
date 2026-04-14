@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Header from "../components/common/header";
 import EditButton from "../components/write/editButton";
-import CommentWrite from "../components/write/commentWrite";
+import CommentWrite from "../components/write/comment";
 
 function Detail() {
   return (

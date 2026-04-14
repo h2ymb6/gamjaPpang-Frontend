@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CommentWrite = () => {
+const Comment = () => {
   return (
     <>
       <Wrap>
@@ -12,7 +12,7 @@ const CommentWrite = () => {
   );
 };
 
-export default CommentWrite;
+export default Comment;
 
 const Wrap = styled.div`
   border: 1px solid black;

@@ -1,13 +1,9 @@
 import { api } from "..";
 import type { Type } from "../comment/type";
 
-const commentWrite = async ({ postId, content }: Type) => {
+export const comments = async (): Promise<Type[]> => {
   try {
-    const response = await api.post(`/api/v1/comment`, {
-      postId,
-      content,
-    });
-
+    const response = await api.get(`/api/v1/me/posts`);
     return response.data;
   } catch (error) {
     console.log(error);
