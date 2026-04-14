@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "../components/common/header";
 import EditButton from "../components/write/editButton";
+import CommentWrite from "../components/write/commentWrite";
 
 function Detail() {
   return (
@@ -23,6 +24,7 @@ function Detail() {
         <Text>대충 내용</Text>
       </Wrap>
       <EditButton />
+      <CommentWrite />
     </>
   );
 }
